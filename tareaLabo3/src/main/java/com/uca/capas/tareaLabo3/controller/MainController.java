@@ -33,7 +33,7 @@ public class MainController {
 	@PostMapping("/validar")
 	public ModelAndView validar(Product producto) {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("nombre", producto.getNombre());
+		mav.addObject("nombre", productList.get(producto.getId()).getNombre());
 		int cantidadProdLista = Integer.parseInt(productList.get(producto.getId()).getCantidad());
 		int cantidadProd = Integer.parseInt(producto.getCantidad());
 		if (cantidadProd <= cantidadProdLista && cantidadProd > 0) 
